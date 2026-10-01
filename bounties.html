@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bounties — JobCoin</title>
+  <meta name="description" content="Real tasks with posted rewards. Do the job, submit proof, get paid to your wallet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="topbar" id="nav">
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker"></div>
+    </div>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <button class="nav-burger" id="nav-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="nav-logo">JobCoin</a>
+        <span class="treasury-pill"><span class="pulse-dot"></span>Treasury <strong>$0</strong></span>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" data-mock="robinhood">Buy on Robinhood</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Menu">
+    <div class="sidebar-head">
+      <span class="nav-logo">JobCoin</span>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="sidebar-label">The Coin</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Home</a>
+      <a href="earn.html">How you earn</a>
+      <a href="work.html">Work floor</a>
+      <a href="retail.html">Built for retail</a>
+      <a href="flywheel.html">The flywheel</a>
+      <a href="bounties.html" class="active">Bounties</a>
+      <a href="careers.html">Careers</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+    <div class="sidebar-foot">
+      <a href="#" class="btn btn-primary" data-mock="robinhood">Buy JobCoin</a>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <span class="eyebrow reveal">Live Board</span>
+      <h1 class="reveal">Open <span class="gradient-text">bounties.</span></h1>
+      <p class="lead reveal">
+        Real jobs, posted prices. Claim one, ship the proof, and the full
+        amount goes to your wallet on verify.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ OPEN BOUNTIES ============ -->
+  <section class="section" style="padding-top: 20px;">
+    <div class="container">
+      <div class="bounty-grid">
+        <div class="bounty tilt reveal">
+          <div class="bounty-top">
+            <span class="tag tag-live">Open</span>
+            <span class="bounty-pay">$750</span>
+          </div>
+          <h4>Street art drop</h4>
+          <p>Put JobCoin up on a wall — somewhere it's allowed. Photo of the finished piece plus a short video panning the wall.</p>
+          <div class="bounty-meta">
+            <span>In real life</span>
+            <span>No claims yet</span>
+          </div>
+          <button class="btn btn-secondary btn-sm claim-btn"
+            data-title="Street art drop"
+            data-pay="$750"
+            data-type="In real life"
+            data-proof="Photo of the finished piece + a short video panning the wall.">Claim bounty</button>
+        </div>
+        <div class="bounty tilt reveal">
+          <div class="bounty-top">
+            <span class="tag tag-live">Open</span>
+            <span class="bounty-pay">$500</span>
+          </div>
+          <h4>Thread that converts</h4>
+          <p>Write a JobCoin thread that breaks 500k impressions. Screenshot of the analytics plus a screen-recording scrolling the thread.</p>
+          <div class="bounty-meta">
+            <span>Content</span>
+            <span>No claims yet</span>
+          </div>
+          <button class="btn btn-secondary btn-sm claim-btn"
+            data-title="Thread that converts"
+            data-pay="$500"
+            data-type="Content"
+            data-proof="Screenshot of the analytics + a screen-recording scrolling the thread.">Claim bounty</button>
+        </div>
+        <div class="bounty tilt reveal">
+          <div class="bounty-top">
+            <span class="tag tag-hot">Hot</span>
+            <span class="bounty-pay">$10,000</span>
+          </div>
+          <h4>Land a major podcast</h4>
+          <p>Get JobCoin featured on a top-100 podcast. Photo of the booking confirmation plus a clip of the aired segment.</p>
+          <div class="bounty-meta">
+            <span>Growth</span>
+            <span>No claims yet</span>
+          </div>
+          <button class="btn btn-secondary btn-sm claim-btn"
+            data-title="Land a major podcast"
+            data-pay="$10,000"
+            data-type="Growth"
+            data-proof="Photo of the booking confirmation + a clip of the aired segment.">Claim bounty</button>
+        </div>
+        <div class="bounty tilt reveal">
+          <div class="bounty-top">
+            <span class="tag tag-live">Open</span>
+            <span class="bounty-pay">$1,500</span>
+          </div>
+          <h4>Campus takeover</h4>
+          <p>Flyer a college campus with JobCoin posters (where posting is allowed). Photo of at least 50 placements plus a walkthrough video.</p>
+          <div class="bounty-meta">
+            <span>In real life</span>
+            <span>No claims yet</span>
+          </div>
+          <button class="btn btn-secondary btn-sm claim-btn"
+            data-title="Campus takeover"
+            data-pay="$1,500"
+            data-type="In real life"
+            data-proof="Photo of at least 50 placements + a walkthrough video.">Claim bounty</button>
+        </div>
+        <div class="bounty tilt reveal">
+          <div class="bounty-top">
+            <span class="tag tag-live">Open</span>
+            <span class="bounty-pay">$5,000</span>
+          </div>
+          <h4>Treasury dashboard</h4>
+          <p>Build a public dashboard tracking every dollar the treasury takes in and pays out. Screenshot of the dashboard plus a live demo video.</p>
+          <div class="bounty-meta">
+            <span>Engineering</span>
+            <span>No claims yet</span>
+          </div>
+          <button class="btn btn-secondary btn-sm claim-btn"
+            data-title="Treasury dashboard"
+            data-pay="$5,000"
+            data-type="Engineering"
+            data-proof="Screenshot of the dashboard + a live demo video.">Claim bounty</button>
+        </div>
+        <div class="bounty tilt reveal">
+          <div class="bounty-top">
+            <span class="tag tag-live">Open</span>
+            <span class="bounty-pay">$1,200</span>
+          </div>
+          <h4>Launch film vol. 1</h4>
+          <p>Cut a 60-second JobCoin launch film. The exported clip plus a screen-recording of your edit timeline as proof.</p>
+          <div class="bounty-meta">
+            <span>Creative</span>
+            <span>No claims yet</span>
+          </div>
+          <button class="btn btn-secondary btn-sm claim-btn"
+            data-title="Launch film vol. 1"
+            data-pay="$1,200"
+            data-type="Creative"
+            data-proof="The exported clip + a screen-recording of your edit timeline.">Claim bounty</button>
+        </div>
+      </div>
+      <div class="section-cta reveal">
+        <span class="composer-note" style="margin: 0;">New bounties post as the treasury fills. Submissions land on the work floor.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2>Pick a job. Claim the bag.</h2>
+      <p>New bounties post every week.</p>
+      <div class="hero-cta">
+        <a href="earn.html" class="btn btn-primary btn-lg">See all ways to earn</a>
+        <a href="work.html#floor" class="btn btn-secondary btn-lg">Watch the live floor →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a href="index.html" class="footer-logo">JobCoin</a>
+      <nav class="footer-links">
+        <a href="earn.html">Earn</a>
+        <a href="work.html">Work floor</a>
+        <a href="retail.html">For Retail</a>
+        <a href="flywheel.html">Flywheel</a>
+        <a href="bounties.html">Bounties</a>
+        <a href="careers.html">Careers</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="docs.html">Docs</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-note">© 2026 JobCoin. The coin just wants to work.</div>
+  </footer>
+
+  <!-- ============ CLAIM WIZARD MODAL ============ -->
+  <div class="modal-overlay" id="wiz-overlay">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <div class="modal-title"><b id="wiz-bounty-name">Bounty</b><span id="wiz-type">Type</span></div>
+        <button class="modal-close" id="wiz-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="wiz-progress"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+
+      <!-- Step 1: claim -->
+      <div class="wiz-step on">
+        <span class="wiz-kicker">Step 1 of 5 — Claim</span>
+        <h4>Claim this bounty</h4>
+        <p>Claiming reserves your spot. You can work on it right away — the reward is paid once your proof is verified.</p>
+        <div class="wiz-reward">
+          <span>Posted reward</span>
+          <b id="wiz-reward-amount">$0</b>
+        </div>
+        <div class="wiz-reqs">
+          <div class="wiz-req"><i>✓</i><span id="wiz-proof-note">Proof requirements.</span></div>
+          <div class="wiz-req"><i>✓</i><span>The posted amount is the paid amount — no cuts, no fees off your end.</span></div>
+          <div class="wiz-req"><i>✓</i><span>Verification usually completes within 24–48 hours of submission.</span></div>
+        </div>
+        <div class="wiz-actions">
+          <button class="btn btn-primary" id="wiz-claim">Claim &amp; start</button>
+        </div>
+      </div>
+
+      <!-- Step 2: proof uploads -->
+      <div class="wiz-step">
+        <span class="wiz-kicker">Step 2 of 5 — Proof</span>
+        <h4>Submit your two proofs</h4>
+        <p>Every bounty needs both — one photo and one video of the finished work. Both are reviewed together.</p>
+        <label class="upload-box" id="wiz-photo">
+          <input type="file" id="wiz-photo-file" accept="image/*" />
+          <span class="upload-title">Photo proof</span>
+          <span class="upload-sub">JPG or PNG — tap to attach</span>
+        </label>
+        <label class="upload-box" id="wiz-video">
+          <input type="file" id="wiz-video-file" accept="video/*" />
+          <span class="upload-title">Video proof</span>
+          <span class="upload-sub">MP4 or MOV — tap to attach</span>
+        </label>
+        <div class="wiz-actions">
+          <button class="btn btn-secondary" id="wiz-back-2">Back</button>
+          <button class="btn btn-primary" id="wiz-next-2" disabled>Continue</button>
+        </div>
+      </div>
+
+      <!-- Step 3: payout details -->
+      <div class="wiz-step">
+        <span class="wiz-kicker">Step 3 of 5 — Payout</span>
+        <h4>Where should the money go?</h4>
+        <p>Your X account is attached to the submission so the team can verify it's you. The reward is sent to the wallet below.</p>
+        <div class="field">
+          <label for="wiz-x">X account</label>
+          <input type="text" id="wiz-x" placeholder="@yourhandle" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="field">
+          <label for="wiz-wallet">Payout wallet</label>
+          <input type="text" id="wiz-wallet" placeholder="0x…" autocomplete="off" spellcheck="false" />
+          <span class="field-hint">Double-check this — payouts are final once sent.</span>
+        </div>
+        <div class="wiz-actions">
+          <button class="btn btn-secondary" id="wiz-back-3">Back</button>
+          <button class="btn btn-primary" id="wiz-next-3" disabled>Review submission</button>
+        </div>
+      </div>
+
+      <!-- Step 4: review + confirm -->
+      <div class="wiz-step">
+        <span class="wiz-kicker">Step 4 of 5 — Review</span>
+        <h4>Confirm everything</h4>
+        <p>This is exactly what the verification team will see.</p>
+        <div class="review-list">
+          <div class="review-row"><span>Bounty</span><b id="rv-bounty">—</b></div>
+          <div class="review-row"><span>Reward</span><b id="rv-reward">—</b></div>
+          <div class="review-row"><span>Photo proof</span><b class="ok" id="rv-photo">Attached ✓</b></div>
+          <div class="review-row"><span>Video proof</span><b class="ok" id="rv-video">Attached ✓</b></div>
+          <div class="review-row"><span>X account</span><b id="rv-x">—</b></div>
+          <div class="review-row"><span>Payout wallet</span><b id="rv-wallet">—</b></div>
+        </div>
+        <div class="wiz-actions">
+          <button class="btn btn-secondary" id="wiz-back-4">Back</button>
+          <button class="btn btn-primary" id="wiz-confirm">Confirm &amp; submit</button>
+        </div>
+      </div>
+
+      <!-- Step 5: success -->
+      <div class="wiz-step">
+        <div class="wiz-success">
+          <div class="success-check">✓</div>
+          <h4>Submitted for verification</h4>
+          <p>Your submission is live on the work floor with everyone else's. Once your proof checks out, the full reward is sent to your wallet — usually within 48 hours.</p>
+          <span class="wiz-ref" id="wiz-refid">Submission ref: —</span>
+        </div>
+        <div class="wiz-actions" style="justify-content: center;">
+          <a href="work.html" class="btn btn-secondary">See it on the floor</a>
+          <button class="btn btn-primary" id="wiz-done">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <span class="toast-dot"></span>
+    <span class="toast-text" id="toast-text">Coming soon</span>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

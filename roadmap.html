@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap — JobCoin</title>
+  <meta name="description" content="Four phases, one direction. Each phase makes the workforce bigger, the treasury stronger, and the flywheel faster." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="topbar" id="nav">
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker"></div>
+    </div>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <button class="nav-burger" id="nav-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="nav-logo">JobCoin</a>
+        <span class="treasury-pill"><span class="pulse-dot"></span>Treasury <strong>$0</strong></span>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" data-mock="robinhood">Buy on Robinhood</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Menu">
+    <div class="sidebar-head">
+      <span class="nav-logo">JobCoin</span>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="sidebar-label">The Coin</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Home</a>
+      <a href="earn.html">How you earn</a>
+      <a href="work.html">Work floor</a>
+      <a href="retail.html">Built for retail</a>
+      <a href="flywheel.html">The flywheel</a>
+      <a href="bounties.html">Bounties</a>
+      <a href="careers.html">Careers</a>
+      <a href="roadmap.html" class="active">Roadmap</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+    <div class="sidebar-foot">
+      <a href="#" class="btn btn-primary" data-mock="robinhood">Buy JobCoin</a>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <span class="eyebrow reveal">Roadmap</span>
+      <h1 class="reveal">Where this<br /><span class="gradient-text">is going.</span></h1>
+      <p class="lead reveal">
+        Four phases, one direction. Each phase makes the workforce bigger,
+        the treasury stronger, and the flywheel faster.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PHASES ============ -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Phase 1 -->
+      <div class="phase">
+        <figure class="phase-visual tilt reveal">
+          <img src="img/coin-hardhat.jpg" alt="The coin clocks in" />
+        </figure>
+        <div class="reveal">
+          <span class="phase-status active"><span class="pulse-dot"></span>In progress</span><span class="phase-num">Phase 01</span>
+          <h3>Ignition</h3>
+          <p>The coin clocks in. The site is live, the bounty board is posted, and the work floor is open before the first trade ever clears. Launch flips the treasury on.</p>
+          <div class="milestones">
+            <div class="ms done"><i>✓</i>Site live — the storefront is open</div>
+            <div class="ms done"><i>✓</i>First bounties posted to the board</div>
+            <div class="ms done"><i>✓</i>Work floor open for early submissions</div>
+            <div class="ms todo"><i>○</i>Launch on Robinhood — treasury starts collecting</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase flip">
+        <figure class="phase-visual tilt reveal">
+          <img src="img/badge-render.jpg" alt="The workforce gets badges" />
+        </figure>
+        <div class="reveal">
+          <span class="phase-status next">Next</span><span class="phase-num">Phase 02</span>
+          <h3>Workforce</h3>
+          <p>The payroll grows up. Proof-and-payout moves into one app, ranks go live, and the bag worker program scales past its first thousand.</p>
+          <div class="milestones">
+            <div class="ms todo"><i>○</i>First 1,000 bag workers on payroll</div>
+            <div class="ms todo"><i>○</i>Weekly payroll running on schedule</div>
+            <div class="ms todo"><i>○</i>Proof-and-payout app launch</div>
+            <div class="ms todo"><i>○</i>First full-time hires paid from the treasury</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase">
+        <figure class="phase-visual tilt reveal">
+          <img src="img/coin-stacks.jpg" alt="The treasury compounds" />
+        </figure>
+        <div class="reveal">
+          <span class="phase-status next">Next</span><span class="phase-num">Phase 03</span>
+          <h3>Expansion</h3>
+          <p>The flywheel gets louder. Bigger listings bring bigger volume, bigger volume funds bigger campaigns, and the bounty board opens to everyone.</p>
+          <div class="milestones">
+            <div class="ms todo"><i>○</i>Major exchange listings</div>
+            <div class="ms todo"><i>○</i>Bounty marketplace v2 — open submissions</div>
+            <div class="ms todo"><i>○</i>Global marketing campaigns</div>
+            <div class="ms todo"><i>○</i>Public treasury dashboard</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="phase flip">
+        <figure class="phase-visual tilt reveal">
+          <img src="img/briefcase.jpg" alt="The company coin" />
+        </figure>
+        <div class="reveal">
+          <span class="phase-status next">Horizon</span><span class="phase-num">Phase 04</span>
+          <h3>The Company Coin</h3>
+          <p>The end state: a fully coin-funded workforce operating at scale. Thousands of workers, one treasury, zero offices. The coin stops being like a company and becomes one.</p>
+          <div class="milestones">
+            <div class="ms todo"><i>○</i>10,000+ workers on payroll</div>
+            <div class="ms todo"><i>○</i>Self-sustaining treasury across market cycles</div>
+            <div class="ms todo"><i>○</i>Worker-governed bounty funding</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2>Get in before phase three.</h2>
+      <p>The flywheel is already turning.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary btn-lg" data-mock="robinhood">Buy on Robinhood</a>
+        <a href="docs.html" class="btn btn-secondary btn-lg">Read the docs →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a href="index.html" class="footer-logo">JobCoin</a>
+      <nav class="footer-links">
+        <a href="earn.html">Earn</a>
+        <a href="work.html">Work floor</a>
+        <a href="retail.html">For Retail</a>
+        <a href="flywheel.html">Flywheel</a>
+        <a href="bounties.html">Bounties</a>
+        <a href="careers.html">Careers</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="docs.html">Docs</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-note">© 2026 JobCoin. The coin just wants to work.</div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <span class="toast-dot"></span>
+    <span class="toast-text" id="toast-text">Coming soon</span>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

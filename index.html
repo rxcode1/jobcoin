@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobCoin — The Coin That Works</title>
+  <meta name="description" content="JobCoin pays people to work. Get paid to post, work your bag, and claim real-world bounties. Live on Robinhood." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ============ TOP BAR (ticker + nav) ============ -->
+  <header class="topbar" id="nav">
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker"></div>
+    </div>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <button class="nav-burger" id="nav-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="nav-logo">JobCoin</a>
+        <span class="treasury-pill"><span class="pulse-dot"></span>Treasury <strong>$0</strong></span>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" data-mock="robinhood">Buy on Robinhood</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar" aria-label="Menu">
+    <div class="sidebar-head">
+      <span class="nav-logo">JobCoin</span>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="sidebar-label">The Coin</div>
+    <nav class="sidebar-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="earn.html">How you earn</a>
+      <a href="work.html">Work floor</a>
+      <a href="retail.html">Built for retail</a>
+      <a href="flywheel.html">The flywheel</a>
+      <a href="bounties.html">Bounties</a>
+      <a href="careers.html">Careers</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+    <div class="sidebar-foot">
+      <a href="#" class="btn btn-primary" data-mock="robinhood">Buy JobCoin</a>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ============ HERO (single screen) ============ -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content hero-split">
+      <div class="hero-text">
+        <h1 class="hero-title reveal">
+          The first coin<br />
+          <span class="gradient-text">with a job.</span>
+        </h1>
+        <p class="hero-sub reveal">Get paid to post. Work your bag. Claim bounties.</p>
+        <div class="hero-cta reveal">
+          <a href="#" class="btn btn-primary btn-lg" data-mock="robinhood">Buy JobCoin</a>
+          <a href="earn.html" class="btn btn-secondary btn-lg">How to earn</a>
+          <a href="work.html#floor" class="btn btn-secondary btn-lg">Live floor</a>
+          <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" class="btn btn-secondary btn-lg btn-icon" aria-label="X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat reveal">
+            <div class="stat-value">$0</div>
+            <div class="stat-label">Paid out — day one starts at zero</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat-value">6</div>
+            <div class="stat-label">Bounties open right now</div>
+          </div>
+          <div class="stat reveal">
+            <div class="stat-value">Open</div>
+            <div class="stat-label">The work floor — clock in early</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="badge-float">
+          <img src="img/badge-3d.jpg" alt="" class="hero-badge tilt" aria-hidden="true" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-row">
+      <a href="index.html" class="footer-logo">JobCoin</a>
+      <nav class="footer-links">
+        <a href="earn.html">Earn</a>
+        <a href="work.html">Work floor</a>
+        <a href="retail.html">For Retail</a>
+        <a href="flywheel.html">Flywheel</a>
+        <a href="bounties.html">Bounties</a>
+        <a href="careers.html">Careers</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="docs.html">Docs</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-note">© 2026 JobCoin. The coin just wants to work.</div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <span class="toast-dot"></span>
+    <span class="toast-text" id="toast-text">Coming soon</span>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

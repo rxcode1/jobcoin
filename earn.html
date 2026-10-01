@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How You Earn — JobCoin</title>
+  <meta name="description" content="Three ways to get paid with JobCoin: post content, work your bag, and complete bounties." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="topbar" id="nav">
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker"></div>
+    </div>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <button class="nav-burger" id="nav-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="nav-logo">JobCoin</a>
+        <span class="treasury-pill"><span class="pulse-dot"></span>Treasury <strong>$0</strong></span>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" data-mock="robinhood">Buy on Robinhood</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Menu">
+    <div class="sidebar-head">
+      <span class="nav-logo">JobCoin</span>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="sidebar-label">The Coin</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Home</a>
+      <a href="earn.html" class="active">How you earn</a>
+      <a href="work.html">Work floor</a>
+      <a href="retail.html">Built for retail</a>
+      <a href="flywheel.html">The flywheel</a>
+      <a href="bounties.html">Bounties</a>
+      <a href="careers.html">Careers</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+    <div class="sidebar-foot">
+      <a href="#" class="btn btn-primary" data-mock="robinhood">Buy JobCoin</a>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="hero-glow"></div>
+    <div class="container split-layout">
+      <div>
+        <span class="eyebrow reveal">How You Earn</span>
+        <h1 class="reveal">Three ways<br /><span class="gradient-text">to get paid.</span></h1>
+        <p class="lead reveal">
+          No resume. No interview. No experience. You need a phone, a wallet,
+          and the will to work. Everything you do for the coin gets tracked —
+          and everything tracked gets paid.
+        </p>
+        <div class="hero-cta reveal" style="justify-content: flex-start; margin-top: 32px;">
+          <a href="work.html" class="btn btn-primary btn-lg">Start earning</a>
+          <a href="bounties.html" class="btn btn-secondary btn-lg">Browse bounties</a>
+        </div>
+      </div>
+      <div class="app-window tilt reveal">
+        <div class="app-chrome"><i></i><i></i><i></i><span>earnings.jobcoin.app</span></div>
+        <div class="app-balance">
+          <div>
+            <span class="app-balance-label">Your balance</span>
+            <span class="app-balance-value">$2,840.00</span>
+          </div>
+          <span class="app-delta">+$420 this week</span>
+        </div>
+        <div class="app-rows">
+          <div class="app-row">
+            <div>
+              <div class="app-row-name">Street art — 5th &amp; Main</div>
+              <div class="app-row-type">Bounty</div>
+            </div>
+            <div class="app-row-right">
+              <div class="app-amount">$750.00</div>
+              <span class="pill pill-paid">Paid</span>
+            </div>
+          </div>
+          <div class="app-row">
+            <div>
+              <div class="app-row-name">Thread — how the flywheel works</div>
+              <div class="app-row-type">Post</div>
+            </div>
+            <div class="app-row-right">
+              <div class="app-amount">$140.00</div>
+              <span class="pill pill-paid">Paid</span>
+            </div>
+          </div>
+          <div class="app-row">
+            <div>
+              <div class="app-row-name">Week 12 payroll</div>
+              <div class="app-row-type">Bag work</div>
+            </div>
+            <div class="app-row-right">
+              <div class="app-amount">$175.00</div>
+              <span class="pill pill-paid">Paid</span>
+            </div>
+          </div>
+          <div class="app-row">
+            <div>
+              <div class="app-row-name">Launch recap clip</div>
+              <div class="app-row-type">Post</div>
+            </div>
+            <div class="app-row-right">
+              <div class="app-amount">$95.00</div>
+              <span class="pill pill-review">In review</span>
+            </div>
+          </div>
+        </div>
+        <div class="app-foot">
+          <span>Next payroll run</span>
+          <span><b>2d 14h</b></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE THREE LANES ============ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Three Lanes</span>
+        <h2>Pick a lane.<br /><span class="gradient-text">Or run all three.</span></h2>
+        <p>Every lane pays from the same treasury. Nothing stops you from running all three at once.</p>
+      </div>
+
+      <!-- Lane 01: posting -->
+      <div class="lane">
+        <div class="reveal">
+          <span class="lane-kicker">Lane 01 — Posting</span>
+          <h3>Get paid to post.</h3>
+          <p>Tweets, threads, clips, memes — if it's about JobCoin and it's good, it earns. Drop the link on the work floor and approved content gets paid out based on quality and reach. No follower minimum.</p>
+          <div class="lane-tags">
+            <span class="lane-tag">No follower minimum</span>
+            <span class="lane-tag">Paid per approval</span>
+            <span class="lane-tag">Reach bonus up to 2×</span>
+          </div>
+          <div class="lane-cta">
+            <a href="work.html" class="btn btn-primary">Submit a post →</a>
+          </div>
+        </div>
+        <div class="lane-visual mock-post tilt reveal">
+          <div class="mock-post-head">
+            <div class="mock-avatar">BW</div>
+            <div class="mock-handle">
+              <strong>bag worker #412</strong>
+              <span>@bagworker412 · 2h</span>
+            </div>
+          </div>
+          <p class="mock-post-body">clocked in. posted the thread. treasury pays me friday. best job i've ever had and my boss is a coin.</p>
+          <div class="mock-post-stats">
+            <span>1.2k reposts</span>
+            <span>4.8k likes</span>
+            <span>212k views</span>
+          </div>
+          <div class="mock-stamp">
+            <span>Status</span>
+            <b>Approved — $140 sent to wallet</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lane 02: bag work -->
+      <div class="lane flip">
+        <div class="reveal">
+          <span class="lane-kicker">Lane 02 — Bag Work</span>
+          <h3>Work your bag. Weekly.</h3>
+          <p>Bag workers are the standing army — amplifying launches, welcoming holders, keeping the community moving. Screenshot your work, post it to the floor, and rank up to bigger weekly bags.</p>
+          <div class="lane-tags">
+            <span class="lane-tag">Weekly payroll</span>
+            <span class="lane-tag">Tracked automatically</span>
+            <span class="lane-tag">Rank-based pay</span>
+          </div>
+          <div class="lane-cta">
+            <a href="work.html" class="btn btn-primary">Clock in on the floor →</a>
+          </div>
+        </div>
+        <div class="lane-visual ladder tilt reveal">
+          <div class="ladder-head"><span>Bag worker ranks</span><span>Weekly pay</span></div>
+          <div class="rung">
+            <span class="rung-name">Intern</span>
+            <span class="rung-pay">$50/wk</span>
+            <div class="rung-bar"><div class="rung-fill" style="width: 18%"></div></div>
+          </div>
+          <div class="rung">
+            <span class="rung-name">Associate</span>
+            <span class="rung-pay">$120/wk</span>
+            <div class="rung-bar"><div class="rung-fill" style="width: 38%"></div></div>
+          </div>
+          <div class="rung current">
+            <span class="rung-name">Manager <span class="you-chip">YOU</span></span>
+            <span class="rung-pay">$250/wk</span>
+            <div class="rung-bar"><div class="rung-fill" style="width: 66%"></div></div>
+          </div>
+          <div class="rung">
+            <span class="rung-name">Executive</span>
+            <span class="rung-pay">$400/wk</span>
+            <div class="rung-bar"><div class="rung-fill" style="width: 100%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lane 03: bounties -->
+      <div class="lane">
+        <div class="reveal">
+          <span class="lane-kicker">Lane 03 — Bounties</span>
+          <h3>Claim a bounty.<br />Ship the proof.</h3>
+          <p>Bounties are one-off jobs with a posted price — online and out in the real world. Finish the job, submit your proof, and once it's verified the full reward goes straight to your wallet.</p>
+          <div class="lane-tags">
+            <span class="lane-tag">Posted price, paid in full</span>
+            <span class="lane-tag">Photo + video proof</span>
+            <span class="lane-tag">$500 – $10,000</span>
+          </div>
+          <div class="lane-cta">
+            <a href="bounties.html" class="btn btn-primary">Browse open bounties →</a>
+          </div>
+        </div>
+        <div class="lane-visual ticket tilt reveal">
+          <div class="ticket-head"><span>Bounty #047</span><b>$750</b></div>
+          <div class="ticket-title">Street art drop — put JobCoin on a wall</div>
+          <div class="ticket-sub">Claimed by @wallguy · proof required: photo</div>
+          <div class="ticket-steps">
+            <div class="tstep">
+              <span class="tstep-dot">✓</span>
+              <div>Bounty claimed</div>
+              <time>Mon 09:14</time>
+            </div>
+            <div class="tstep">
+              <span class="tstep-dot">✓</span>
+              <div>Photo proof submitted</div>
+              <time>Tue 16:02</time>
+            </div>
+            <div class="tstep">
+              <span class="tstep-dot">✓</span>
+              <div>Verified by the team</div>
+              <time>Tue 18:40</time>
+            </div>
+            <div class="tstep paid">
+              <span class="tstep-dot">✓</span>
+              <div>$750 paid <span>→ 0x8f4a…3c21</span></div>
+              <time>Tue 18:41</time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RATE CARD ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Rate Card</span>
+        <h2>What the work<br /><span class="gradient-text">actually pays.</span></h2>
+        <p>Current rates, straight from the treasury. Amounts scale with quality, reach, and difficulty — the full schedule is public in the docs.</p>
+      </div>
+      <div class="rate-table reveal">
+        <div class="rate-row head">
+          <span>Work</span>
+          <span>Rate</span>
+          <span>Paid</span>
+          <span>Notes</span>
+        </div>
+        <div class="rate-row">
+          <div class="rate-work"><b>Single post</b><span>Tweet, meme, or clip</span></div>
+          <span class="rate-amount">$25 – $250</span>
+          <span class="rate-when">Within 48h</span>
+          <span class="rate-note">Per approved post. Quality over quantity.</span>
+        </div>
+        <div class="rate-row">
+          <div class="rate-work"><b>Long-form content</b><span>Thread or video</span></div>
+          <span class="rate-amount">$100 – $500</span>
+          <span class="rate-when">Within 48h</span>
+          <span class="rate-note">Reach bonus up to 2× on breakout posts.</span>
+        </div>
+        <div class="rate-row">
+          <div class="rate-work"><b>Bag worker payroll</b><span>Ongoing community work</span></div>
+          <span class="rate-amount">$50 – $400 /wk</span>
+          <span class="rate-when">Weekly</span>
+          <span class="rate-note">Scales with rank and tracked activity.</span>
+        </div>
+        <div class="rate-row">
+          <div class="rate-work"><b>Bounties</b><span>One-off jobs, posted price</span></div>
+          <span class="rate-amount">$500 – $10,000</span>
+          <span class="rate-when">On verify</span>
+          <span class="rate-note">Posted amount is the paid amount. No cuts.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2>Clock in.</h2>
+      <p>The board is open. Post your first piece of work today.</p>
+      <div class="hero-cta">
+        <a href="work.html" class="btn btn-primary btn-lg">Go to the work floor</a>
+        <a href="retail.html" class="btn btn-secondary btn-lg">Why retail wins →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a href="index.html" class="footer-logo">JobCoin</a>
+      <nav class="footer-links">
+        <a href="earn.html">Earn</a>
+        <a href="work.html">Work floor</a>
+        <a href="retail.html">For Retail</a>
+        <a href="flywheel.html">Flywheel</a>
+        <a href="bounties.html">Bounties</a>
+        <a href="careers.html">Careers</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="docs.html">Docs</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-note">© 2026 JobCoin. The coin just wants to work.</div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <span class="toast-dot"></span>
+    <span class="toast-text" id="toast-text">Coming soon</span>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

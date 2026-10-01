@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Built for Retail — JobCoin</title>
+  <meta name="description" content="Retail already knows how to work a job. JobCoin is the first coin that pays them back for it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="topbar" id="nav">
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker"></div>
+    </div>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <button class="nav-burger" id="nav-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="nav-logo">JobCoin</a>
+        <span class="treasury-pill"><span class="pulse-dot"></span>Treasury <strong>$0</strong></span>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" data-mock="robinhood">Buy on Robinhood</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Menu">
+    <div class="sidebar-head">
+      <span class="nav-logo">JobCoin</span>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="sidebar-label">The Coin</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Home</a>
+      <a href="earn.html">How you earn</a>
+      <a href="work.html">Work floor</a>
+      <a href="retail.html" class="active">Built for retail</a>
+      <a href="flywheel.html">The flywheel</a>
+      <a href="bounties.html">Bounties</a>
+      <a href="careers.html">Careers</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+    <div class="sidebar-foot">
+      <a href="#" class="btn btn-primary" data-mock="robinhood">Buy JobCoin</a>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="hero-glow"></div>
+    <div class="container split-layout">
+      <div>
+        <span class="eyebrow reveal">Built for Retail</span>
+        <h1 class="reveal">Retail already<br /><span class="gradient-text">knows the grind.</span></h1>
+        <p class="lead reveal">
+          Clock in, do the work, get the check. Retail has run that loop their
+          whole lives — for someone else's company. JobCoin is the same loop,
+          except this time the workers hold the equity.
+        </p>
+        <div class="hero-cta reveal" style="justify-content: flex-start; margin-top: 32px;">
+          <a href="earn.html" class="btn btn-primary btn-lg">See how you earn</a>
+          <a href="flywheel.html" class="btn btn-secondary btn-lg">See the flywheel</a>
+        </div>
+      </div>
+      <figure class="render-img tilt reveal">
+        <img src="img/badge-render.jpg" alt="JobCoin employee badge" />
+        <figcaption>Every holder gets a job title</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ THE UNPAID SHIFT ============ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Unpaid Shift</span>
+        <h2>Retail was already<br /><span class="gradient-text">doing the work.</span></h2>
+        <p>Every memecoin in history ran on unpaid retail labor. The posting, the shilling, the community building — retail did all of it for free while insiders held the supply. JobCoin just puts that work on payroll.</p>
+      </div>
+      <div class="metric-strip reveal">
+        <div class="metric"><b>100%</b><span>Of memecoin marketing done by holders</span></div>
+        <div class="metric"><b>$0</b><span>What they were paid for it — until now</span></div>
+        <div class="metric"><b><em>Day 0</em></b><span>JobCoin starts here — the treasury fills at launch</span></div>
+        <div class="metric"><b>Open</b><span>The work floor is live — clock in before launch</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARISON ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Same Grind, Better Deal</span>
+        <h2>Your shift<br /><span class="gradient-text">vs. this shift.</span></h2>
+        <p>Retail doesn't need to learn anything new. It's the same job they've always worked — with every term rewritten in their favor.</p>
+      </div>
+      <div class="compare reveal">
+        <div class="compare-col bad">
+          <div class="compare-head">What you're used to</div>
+          <h4>The day job</h4>
+          <div class="compare-item"><span class="x-mark">✕</span><p><b>The boss</b> takes the upside. You get an hourly rate that hasn't moved in years.</p></div>
+          <div class="compare-item"><span class="x-mark">✕</span><p><b>The schedule</b> is theirs. Miss a shift and you hear about it.</p></div>
+          <div class="compare-item"><span class="x-mark">✕</span><p><b>The payday</b> is every two weeks, minus taxes, minus deductions, minus everything.</p></div>
+          <div class="compare-item"><span class="x-mark">✕</span><p><b>The upside</b> is a pizza party and an employee-of-the-month parking spot.</p></div>
+          <div class="compare-item"><span class="x-mark">✕</span><p><b>The exit</b> is two weeks' notice and a shift they still make you cover.</p></div>
+        </div>
+        <div class="compare-col good">
+          <div class="compare-head">What JobCoin runs on</div>
+          <h4>The bag work</h4>
+          <div class="compare-item"><span class="check-mark">✓</span><p><b>The boss</b> is a coin. It doesn't take a cut — it pays out everything it collects.</p></div>
+          <div class="compare-item"><span class="check-mark">✓</span><p><b>The schedule</b> is yours. Post at 3am, claim a bounty on a Sunday. Work counts whenever it ships.</p></div>
+          <div class="compare-item"><span class="check-mark">✓</span><p><b>The payday</b> is within 48 hours of approval, straight to your wallet, posted amount in full.</p></div>
+          <div class="compare-item"><span class="check-mark">✓</span><p><b>The upside</b> is the coin itself. You're paid in the thing your work pushes higher.</p></div>
+          <div class="compare-item"><span class="check-mark">✓</span><p><b>The exit</b> doesn't exist, because nobody's trapped. Stop whenever. The bag is still yours.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SAME GRIND, BETTER BOSS ============ -->
+  <section class="section section-alt">
+    <div class="container split-layout flip">
+      <figure class="render-img tilt reveal">
+        <img src="img/punch-clock.jpg" alt="Punch clock — clock in for the coin" />
+        <figcaption>Clock in whenever you want</figcaption>
+      </figure>
+      <div>
+        <span class="eyebrow reveal">The Narrative</span>
+        <h2 class="reveal">Same grind.<br /><span class="gradient-text">Better boss.</span></h2>
+        <p class="split-p reveal">
+          Nobody has to teach retail how to grind. They've been underpaid experts
+          at it for decades — showing up, clocking in, doing the work while the
+          value flowed up and away from them.
+        </p>
+        <p class="split-p reveal">
+          JobCoin flips the direction of that flow. The work is the same — show
+          up, do the job, get paid — but the thing being built belongs to the
+          people building it. Retail isn't exit liquidity here. Retail is the
+          workforce, and the workforce holds the bag.
+        </p>
+        <div class="check-list">
+          <div class="check-item reveal">
+            <span class="check-mark">✓</span>
+            <p><strong>No gatekeeping.</strong> No resume, no interview, no experience. If you can post, you can work.</p>
+          </div>
+          <div class="check-item reveal">
+            <span class="check-mark">✓</span>
+            <p><strong>No unpaid labor.</strong> Every approved contribution earns. Shilling for free is over.</p>
+          </div>
+          <div class="check-item reveal">
+            <span class="check-mark">✓</span>
+            <p><strong>Aligned upside.</strong> Workers are paid in the coin they're growing. Everyone rows the same way.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2>The shift is open.</h2>
+      <p>Retail finally gets paid for the grind.</p>
+      <div class="hero-cta">
+        <a href="work.html" class="btn btn-primary btn-lg">Start earning</a>
+        <a href="flywheel.html" class="btn btn-secondary btn-lg">See the flywheel →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a href="index.html" class="footer-logo">JobCoin</a>
+      <nav class="footer-links">
+        <a href="earn.html">Earn</a>
+        <a href="work.html">Work floor</a>
+        <a href="retail.html">For Retail</a>
+        <a href="flywheel.html">Flywheel</a>
+        <a href="bounties.html">Bounties</a>
+        <a href="careers.html">Careers</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="docs.html">Docs</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-note">© 2026 JobCoin. The coin just wants to work.</div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <span class="toast-dot"></span>
+    <span class="toast-text" id="toast-text">Coming soon</span>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

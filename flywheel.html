@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Flywheel — JobCoin</title>
+  <meta name="description" content="Fees flow in. The treasury deploys them. The coin climbs. The JobCoin flywheel explained." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="topbar" id="nav">
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker"></div>
+    </div>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <button class="nav-burger" id="nav-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="nav-logo">JobCoin</a>
+        <span class="treasury-pill"><span class="pulse-dot"></span>Treasury <strong>$0</strong></span>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" data-mock="robinhood">Buy on Robinhood</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Menu">
+    <div class="sidebar-head">
+      <span class="nav-logo">JobCoin</span>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="sidebar-label">The Coin</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Home</a>
+      <a href="earn.html">How you earn</a>
+      <a href="work.html">Work floor</a>
+      <a href="retail.html">Built for retail</a>
+      <a href="flywheel.html" class="active">The flywheel</a>
+      <a href="bounties.html">Bounties</a>
+      <a href="careers.html">Careers</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+    <div class="sidebar-foot">
+      <a href="#" class="btn btn-primary" data-mock="robinhood">Buy JobCoin</a>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <span class="eyebrow reveal">The Flywheel</span>
+      <h1 class="reveal">Higher and higher.<br /><span class="gradient-text">By design.</span></h1>
+      <p class="lead reveal">
+        Most coins have a chart and a prayer. JobCoin has a loop. Money comes
+        in, gets put to work, and the work brings more money in. Here's exactly
+        how one dollar moves through the machine.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ THE LOOP (ring diagram) ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="wheel-stage reveal">
+        <svg class="wheel-svg" viewBox="0 0 300 300" aria-hidden="true">
+          <circle class="wheel-track" cx="150" cy="150" r="148" />
+          <circle class="wheel-arc" cx="150" cy="150" r="148" />
+        </svg>
+        <div class="wheel-center">
+          <div>
+            <span class="wheel-center-label">The Treasury</span>
+            <span class="wheel-center-value">$0</span>
+            <span class="wheel-center-sub">fees in · work out · repeat — from day one</span>
+          </div>
+        </div>
+        <div class="wheel-node n1 tilt">
+          <span class="loop-num">01 — Collect</span>
+          <h4>Fees flow in</h4>
+          <p>Every trade generates a small fee. All of it lands in one public treasury anyone can watch.</p>
+        </div>
+        <div class="wheel-node n2 tilt">
+          <span class="loop-num">02 — Deploy</span>
+          <h4>The treasury goes to work</h4>
+          <p>Marketing campaigns, bounty rewards, poster payouts, and weekly bag worker payroll.</p>
+        </div>
+        <div class="wheel-node n3 tilt">
+          <span class="loop-num">03 — Compound</span>
+          <h4>The coin climbs</h4>
+          <p>Paid workers make noise. Noise brings holders. Holders bring volume — and more fees than last cycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHERE THE MONEY GOES ============ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Allocation</span>
+        <h2>Where every dollar<br /><span class="gradient-text">of fees goes.</span></h2>
+        <p>The treasury doesn't sit. Every cycle, collected fees are deployed across four budgets — and the split is public.</p>
+      </div>
+      <div class="reveal">
+        <div class="alloc-bar">
+          <div class="alloc-seg a1" style="width: 45%"></div>
+          <div class="alloc-seg a2" style="width: 30%"></div>
+          <div class="alloc-seg a3" style="width: 20%"></div>
+          <div class="alloc-seg a4" style="width: 5%"></div>
+        </div>
+        <div class="alloc-legend">
+          <span class="alloc-key"><i style="background: var(--green-deep)"></i>Marketing campaigns <b>45%</b></span>
+          <span class="alloc-key"><i style="background: var(--green)"></i>Bag worker payroll <b>30%</b></span>
+          <span class="alloc-key"><i style="background: var(--green-bright)"></i>Bounty rewards <b>20%</b></span>
+          <span class="alloc-key"><i style="background: #c8ecd9"></i>Operations <b>5%</b></span>
+        </div>
+      </div>
+
+      <div style="margin-top: 72px;">
+        <div class="metric-strip reveal">
+          <div class="metric"><b>$0</b><span>Collected so far — the meter starts at launch</span></div>
+          <div class="metric"><b>100%</b><span>Of fees deployed back into the loop</span></div>
+          <div class="metric"><b><em>0</em></b><span>Insider allocations — workers get paid, not VCs</span></div>
+          <div class="metric"><b>Public</b><span>Every treasury move, visible to everyone</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY IT COMPOUNDS ============ -->
+  <section class="section">
+    <div class="container split-layout">
+      <div>
+        <span class="eyebrow reveal">Why It Compounds</span>
+        <h2 class="reveal">The machine feeds<br /><span class="gradient-text">the machine.</span></h2>
+        <p class="split-p reveal">
+          A normal marketing budget gets spent once and it's gone. The JobCoin
+          treasury refills itself, because the thing it spends money on — people
+          working — is the same thing that earns it money. Every dollar paid to
+          a worker buys attention, and attention is what fills the treasury back up.
+        </p>
+        <p class="split-p reveal">
+          That's the whole trick. There's no stage two, no pivot, no "utility
+          coming soon." The utility is the loop, and the loop is already running.
+        </p>
+        <div class="check-list">
+          <div class="check-item reveal">
+            <span class="check-mark">✓</span>
+            <p><strong>Self-funding.</strong> Marketing is paid for by the volume that marketing creates.</p>
+          </div>
+          <div class="check-item reveal">
+            <span class="check-mark">✓</span>
+            <p><strong>Fully public.</strong> The treasury address is open. Watch every dollar come in and go out.</p>
+          </div>
+          <div class="check-item reveal">
+            <span class="check-mark">✓</span>
+            <p><strong>Aligned by default.</strong> Workers are paid in the coin, so everyone pushing it up owns the result.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="render-img tilt reveal">
+        <img src="img/coin-hardhat.jpg" alt="JobCoin wearing a hard hat" />
+        <figcaption>The coin clocks in every day</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2>Be part of the loop.</h2>
+      <p>Every worker makes the next cycle bigger.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary btn-lg" data-mock="robinhood">Get JobCoin</a>
+        <a href="bounties.html" class="btn btn-secondary btn-lg">Do a bounty →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a href="index.html" class="footer-logo">JobCoin</a>
+      <nav class="footer-links">
+        <a href="earn.html">Earn</a>
+        <a href="work.html">Work floor</a>
+        <a href="retail.html">For Retail</a>
+        <a href="flywheel.html">Flywheel</a>
+        <a href="bounties.html">Bounties</a>
+        <a href="careers.html">Careers</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="docs.html">Docs</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-note">© 2026 JobCoin. The coin just wants to work.</div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <span class="toast-dot"></span>
+    <span class="toast-text" id="toast-text">Coming soon</span>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

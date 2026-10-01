@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — JobCoin</title>
+  <meta name="description" content="The career math, rewritten. What a normal job pays per day versus what working for the coin can pay." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="topbar" id="nav">
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker"></div>
+    </div>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <button class="nav-burger" id="nav-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="nav-logo">JobCoin</a>
+        <span class="treasury-pill"><span class="pulse-dot"></span>Treasury <strong>$0</strong></span>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" data-mock="robinhood">Buy on Robinhood</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Menu">
+    <div class="sidebar-head">
+      <span class="nav-logo">JobCoin</span>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="sidebar-label">The Coin</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Home</a>
+      <a href="earn.html">How you earn</a>
+      <a href="work.html">Work floor</a>
+      <a href="retail.html">Built for retail</a>
+      <a href="flywheel.html">The flywheel</a>
+      <a href="bounties.html">Bounties</a>
+      <a href="careers.html" class="active">Careers</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+    <div class="sidebar-foot">
+      <a href="#" class="btn btn-primary" data-mock="robinhood">Buy JobCoin</a>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="hero-glow"></div>
+    <div class="container split-layout">
+      <div>
+        <span class="eyebrow reveal">Careers</span>
+        <h1 class="reveal">The career math,<br /><span class="gradient-text">rewritten.</span></h1>
+        <p class="lead reveal">
+          The median worker takes home about $90 a day. For that, they give up
+          the commute, the meetings, the boss, and the best hours of their life.
+          Working for the coin runs on completely different math.
+        </p>
+        <div class="hero-cta reveal" style="justify-content: flex-start; margin-top: 32px;">
+          <a href="earn.html" class="btn btn-primary btn-lg">Start earning</a>
+          <a href="bounties.html" class="btn btn-secondary btn-lg">Browse bounties</a>
+        </div>
+      </div>
+      <figure class="render-img tilt reveal">
+        <img src="img/briefcase.jpg" alt="The JobCoin briefcase" />
+        <figcaption>Hand in your notice</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ THE DAILY MATH ============ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Daily Math</span>
+        <h2>One day of work.<br /><span class="gradient-text">Two very different checks.</span></h2>
+        <p>A career pays you the same number every day, forever, minus taxes. A day working for the coin — a completed bounty plus bag work — can pay 5× to 10× that. Same day. Same effort. Different math.</p>
+      </div>
+      <div class="earn-bars reveal">
+        <div>
+          <div class="ebar-label">
+            <b>Median career worker</b>
+            <span>8 hours + commute · taxed · capped</span>
+          </div>
+          <div class="ebar-track"><div class="ebar-fill gray">$90/day</div></div>
+        </div>
+        <div>
+          <div class="ebar-label">
+            <b>JobCoin worker</b>
+            <span>One verified bounty + daily bag work · paid in full</span>
+          </div>
+          <div class="ebar-track"><div class="ebar-fill green">$450 – $900/day potential</div></div>
+        </div>
+      </div>
+      <div style="margin-top: 64px;">
+        <div class="metric-strip reveal">
+          <div class="metric"><b>0 min</b><span>Commute, forever</span></div>
+          <div class="metric"><b>0</b><span>Meetings that could've been emails</span></div>
+          <div class="metric"><b>48h</b><span>From verified work to wallet</span></div>
+          <div class="metric"><b><em>Uncapped</em></b><span>Daily earning ceiling</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAREER VS COIN ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Side by Side</span>
+        <h2>A career<br /><span class="gradient-text">vs. the coin.</span></h2>
+        <p>Same work ethic, opposite terms. Here's the honest comparison, line by line.</p>
+      </div>
+      <div class="compare reveal">
+        <div class="compare-col bad">
+          <div class="compare-head">The traditional path</div>
+          <h4>The career</h4>
+          <div class="compare-item"><span class="x-mark">✕</span><p><b>$90 a day</b>, before the commute costs, the lunches, and the dry-cleaning eat into it.</p></div>
+          <div class="compare-item"><span class="x-mark">✕</span><p><b>The 3% raise</b> you negotiate for once a year, if the budget allows, which it doesn't.</p></div>
+          <div class="compare-item"><span class="x-mark">✕</span><p><b>The stress</b> of performance reviews, layoff seasons, and a calendar someone else controls.</p></div>
+          <div class="compare-item"><span class="x-mark">✕</span><p><b>The office</b> — or worse, the hybrid schedule that's somehow both.</p></div>
+          <div class="compare-item"><span class="x-mark">✕</span><p><b>Forty years</b> of this, and the upside belongs to the shareholders.</p></div>
+        </div>
+        <div class="compare-col good">
+          <div class="compare-head">The coin's payroll</div>
+          <h4>Working for JobCoin</h4>
+          <div class="compare-item"><span class="check-mark">✓</span><p><b>$450–$900 a day potential</b> — one verified bounty plus bag work, paid in full, no deductions on your end.</p></div>
+          <div class="compare-item"><span class="check-mark">✓</span><p><b>The raise is built in.</b> You're paid in the coin your work pushes higher. Better work, bigger bag.</p></div>
+          <div class="compare-item"><span class="check-mark">✓</span><p><b>No reviews, no politics.</b> Work is verified against posted requirements. It either ships or it doesn't.</p></div>
+          <div class="compare-item"><span class="check-mark">✓</span><p><b>Work from home.</b> Or the couch, or the beach, or the parking lot of your old job.</p></div>
+          <div class="compare-item"><span class="check-mark">✓</span><p><b>Every dollar you earn</b> is yours, and the upside belongs to the people doing the work.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW TO GO FULL-TIME ============ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Going Full-Time</span>
+        <h2>The path to<br /><span class="gradient-text">quitting out loud.</span></h2>
+        <p>Nobody starts full-time. You stack lanes until the coin out-pays the career — then the decision makes itself.</p>
+      </div>
+      <div class="stepper reveal">
+        <div class="pstep">
+          <span class="pstep-dot">01</span>
+          <h5>Start on the side</h5>
+          <span class="pstep-time">Week 1</span>
+          <p>Post about the coin after work. Approved content pays $25–$250 per post.</p>
+        </div>
+        <div class="pstep">
+          <span class="pstep-dot">02</span>
+          <h5>Join the payroll</h5>
+          <span class="pstep-time">Week 2–4</span>
+          <p>Sign on as a bag worker. Weekly pay, tracked automatically, ranks up over time.</p>
+        </div>
+        <div class="pstep">
+          <span class="pstep-dot">03</span>
+          <h5>Stack bounties</h5>
+          <span class="pstep-time">Month 2+</span>
+          <p>Claim bounties on weekends — $500 to $10,000 each, paid on verification.</p>
+        </div>
+        <div class="pstep fin">
+          <span class="pstep-dot">✓</span>
+          <h5>Do the math</h5>
+          <span class="pstep-time">Your call</span>
+          <p>When the coin consistently out-pays the career, you'll know exactly what to do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2>Your next boss is a coin.</h2>
+      <p>It never micromanages and it always pays on time.</p>
+      <div class="hero-cta">
+        <a href="earn.html" class="btn btn-primary btn-lg">Start earning</a>
+        <a href="bounties.html" class="btn btn-secondary btn-lg">Claim a bounty →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a href="index.html" class="footer-logo">JobCoin</a>
+      <nav class="footer-links">
+        <a href="earn.html">Earn</a>
+        <a href="work.html">Work floor</a>
+        <a href="retail.html">For Retail</a>
+        <a href="flywheel.html">Flywheel</a>
+        <a href="bounties.html">Bounties</a>
+        <a href="careers.html">Careers</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="docs.html">Docs</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-note">© 2026 JobCoin. The coin just wants to work.</div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <span class="toast-dot"></span>
+    <span class="toast-text" id="toast-text">Coming soon</span>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

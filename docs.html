@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docs — JobCoin</title>
+  <meta name="description" content="Every mechanism, every dollar, every rule — documented and public. The complete JobCoin documentation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="topbar" id="nav">
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker"></div>
+    </div>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <button class="nav-burger" id="nav-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="nav-logo">JobCoin</a>
+        <span class="treasury-pill"><span class="pulse-dot"></span>Treasury <strong>$0</strong></span>
+      </div>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary" data-mock="robinhood">Buy on Robinhood</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="Menu">
+    <div class="sidebar-head">
+      <span class="nav-logo">JobCoin</span>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="sidebar-label">The Coin</div>
+    <nav class="sidebar-links">
+      <a href="index.html">Home</a>
+      <a href="earn.html">How you earn</a>
+      <a href="work.html">Work floor</a>
+      <a href="retail.html">Built for retail</a>
+      <a href="flywheel.html">The flywheel</a>
+      <a href="bounties.html">Bounties</a>
+      <a href="careers.html">Careers</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="docs.html" class="active">Docs</a>
+    </nav>
+    <div class="sidebar-foot">
+      <a href="#" class="btn btn-primary" data-mock="robinhood">Buy JobCoin</a>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <span class="eyebrow reveal">Documentation</span>
+      <h1 class="reveal">How it all<br /><span class="gradient-text">actually works.</span></h1>
+      <p class="lead reveal">
+        Every mechanism, every dollar, every rule — written down and public.
+        Fourteen documents covering the full system, from your first buy to the
+        treasury's last ledger line.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ DOCS ============ -->
+  <section class="section">
+    <div class="container">
+
+      <!-- featured: whitepaper -->
+      <div class="doc-feature reveal">
+        <div>
+          <span class="eyebrow">Start Here</span>
+          <h3>The JobCoin Whitepaper</h3>
+          <p>The full thesis in one document: why attention is the only utility that has ever mattered in memecoins, how a fee-funded labor market captures it systematically, and why a coin with a payroll structurally outworks a coin with a promise. Written to be read — no math degree required.</p>
+          <a href="#" class="btn btn-primary" data-mock="doc">Read the whitepaper</a>
+        </div>
+        <div class="doc-feature-meta">
+          <div class="dfm"><b>v1.3</b><span>Current version</span></div>
+          <div class="dfm"><b>24 pages</b><span>Length</span></div>
+          <div class="dfm"><b>~18 min</b><span>Read time</span></div>
+          <div class="dfm"><b>Sep 2026</b><span>Last updated</span></div>
+        </div>
+      </div>
+
+      <div class="docs-layout">
+        <!-- sticky TOC -->
+        <nav class="docs-toc reveal">
+          <div class="docs-toc-label">On this page</div>
+          <a href="#dg-start"><span>01</span>Getting started</a>
+          <a href="#dg-work"><span>02</span>Working for the coin</a>
+          <a href="#dg-treasury"><span>03</span>The treasury</a>
+          <a href="#dg-ref"><span>04</span>Reference</a>
+        </nav>
+
+        <div>
+          <!-- group 01 -->
+          <div class="doc-group reveal" id="dg-start">
+            <div class="doc-group-head">
+              <h3><span>01</span>Getting started</h3>
+              <span class="doc-count">4 documents</span>
+            </div>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>What JobCoin is</h5>
+                <p>The five-minute version: a coin whose entire fee stream funds a workforce, and what that means for holders, workers, and everyone in between.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">5 min</span><span class="doc-arrow">→</span></div>
+            </a>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>Buying on Robinhood</h5>
+                <p>Step-by-step from account to bag. Order types, what the fee does the moment your trade settles, and where that money reappears in the system.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">4 min</span><span class="doc-arrow">→</span></div>
+            </a>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>Setting up your payout wallet</h5>
+                <p>Every worker registers one wallet. How to set it, how to change it, and why the address you confirm is the address that gets paid — no exceptions.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">3 min</span><span class="doc-arrow">→</span></div>
+            </a>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>Creating your worker profile <span class="doc-chip gray">Soon</span></h5>
+                <p>Linking your X account, choosing your lanes, and what the verification team sees when your first submission comes through.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">4 min</span><span class="doc-arrow">→</span></div>
+            </a>
+          </div>
+
+          <!-- group 02 -->
+          <div class="doc-group reveal" id="dg-work">
+            <div class="doc-group-head">
+              <h3><span>02</span>Working for the coin</h3>
+              <span class="doc-count">4 documents</span>
+            </div>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>Posting guidelines &amp; approval criteria</h5>
+                <p>Exactly what gets approved and what gets skipped. Quality signals, reach multipliers, the 48-hour review window, and the appeal process when you disagree.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">7 min</span><span class="doc-arrow">→</span></div>
+            </a>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>The bag worker handbook</h5>
+                <p>The standing army's manual. Daily expectations, how activity is tracked automatically, rank thresholds from Intern to Executive, and how weekly payroll is computed.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">9 min</span><span class="doc-arrow">→</span></div>
+            </a>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>Bounty rules &amp; proof standards</h5>
+                <p>The two-proof standard — one photo, one video — and what each needs to show. Claiming, deadlines, resubmission rules, and what happens when proof falls short.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">6 min</span><span class="doc-arrow">→</span></div>
+            </a>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>Verification &amp; the payout pipeline</h5>
+                <p>What happens after you hit submit: the review queue, the verification checklist, and the path from "approved" to the money landing in your registered wallet.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">5 min</span><span class="doc-arrow">→</span></div>
+            </a>
+          </div>
+
+          <!-- group 03 -->
+          <div class="doc-group reveal" id="dg-treasury">
+            <div class="doc-group-head">
+              <h3><span>03</span>The treasury</h3>
+              <span class="doc-count">3 documents</span>
+            </div>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>Fee mechanics &amp; collection</h5>
+                <p>Where every basis point of every trade goes. How fees accrue, when they sweep into the treasury, and why the collection address never changes.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">6 min</span><span class="doc-arrow">→</span></div>
+            </a>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>Allocation policy</h5>
+                <p>The 45 / 30 / 20 / 5 split — marketing, payroll, bounties, operations — how it was set, when it can change, and the notice period before any change takes effect.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">5 min</span><span class="doc-arrow">→</span></div>
+            </a>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>The public ledger <span class="doc-chip">Live</span></h5>
+                <p>Every dollar in, every dollar out, timestamped and permanent. How to read the ledger yourself and reconcile it against the on-chain record.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">4 min</span><span class="doc-arrow">→</span></div>
+            </a>
+          </div>
+
+          <!-- group 04 -->
+          <div class="doc-group reveal" id="dg-ref">
+            <div class="doc-group-head">
+              <h3><span>04</span>Reference</h3>
+              <span class="doc-count">3 documents</span>
+            </div>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>The rate card</h5>
+                <p>Current rates for every kind of work — posts, threads, clips, payroll tiers, and bounty bands — with the change log of every rate adjustment ever made.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">3 min</span><span class="doc-arrow">→</span></div>
+            </a>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>Brand kit</h5>
+                <p>Logos, the green, type, and templates — everything you need to make JobCoin content that gets approved on the first pass.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">2 min</span><span class="doc-arrow">→</span></div>
+            </a>
+            <a href="#" class="doc-item" data-mock="doc">
+              <div>
+                <h5>FAQ</h5>
+                <p>Short answers to the questions everyone asks first: payouts, taxes, ranks, resubmissions, and what happens if the treasury has a down cycle.</p>
+              </div>
+              <div class="doc-meta"><span class="doc-read">6 min</span><span class="doc-arrow">→</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2>Done reading?</h2>
+      <p>The work is waiting.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary btn-lg" data-mock="robinhood">Get JobCoin</a>
+        <a href="earn.html" class="btn btn-secondary btn-lg">Start earning →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a href="index.html" class="footer-logo">JobCoin</a>
+      <nav class="footer-links">
+        <a href="earn.html">Earn</a>
+        <a href="work.html">Work floor</a>
+        <a href="retail.html">For Retail</a>
+        <a href="flywheel.html">Flywheel</a>
+        <a href="bounties.html">Bounties</a>
+        <a href="careers.html">Careers</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="docs.html">Docs</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://x.com/jobcoinonrh?s=11" target="_blank" rel="noopener" aria-label="X">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Telegram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </a>
+        <a href="#" data-mock="social" aria-label="Discord">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-note">© 2026 JobCoin. The coin just wants to work.</div>
+  </footer>
+
+  <div class="toast" id="toast">
+    <span class="toast-dot"></span>
+    <span class="toast-text" id="toast-text">Coming soon</span>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
