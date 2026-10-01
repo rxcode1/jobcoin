@@ -195,6 +195,15 @@ h4 { font-size: 1.1rem; letter-spacing: -0.01em; }
 }
 .treasury-pill strong { font-weight: 700; }
 
+.ca-pill {
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.ca-pill:hover {
+  background: rgba(0, 133, 77, 0.12);
+  border-color: rgba(0, 133, 77, 0.35);
+}
+
 .pulse-dot {
   width: 7px; height: 7px;
   border-radius: 50%;

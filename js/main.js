@@ -492,6 +492,24 @@ function jcTimeAgo(ts) {
 })();
 
 /* ------------------------------------------------------------
+   7.6 CA PILL — click to copy the contract address
+------------------------------------------------------------ */
+(function caPill() {
+  document.querySelectorAll(".ca-pill").forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const ca = pill.querySelector("strong").textContent.trim();
+      navigator.clipboard.writeText(ca).then(() => {
+        const toast = document.getElementById("toast");
+        const toastText = document.getElementById("toast-text");
+        toastText.textContent = "Contract address copied";
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2000);
+      });
+    });
+  });
+})();
+
+/* ------------------------------------------------------------
    8. MOCK ACTIONS — toast for not-yet-wired functionality
 ------------------------------------------------------------ */
 (function mocks() {
