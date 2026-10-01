@@ -231,7 +231,7 @@ function jcTimeAgo(ts) {
 
   const steps = [...overlay.querySelectorAll(".wiz-step")];
   const bars = [...overlay.querySelectorAll(".wiz-progress i")];
-  const state = { title: "", pay: "", type: "", proof: "", photoName: "", videoName: "" };
+  const state = { title: "", pay: "", proof: "", photoName: "", videoName: "" };
 
   const $ = (id) => document.getElementById(id);
 
@@ -244,14 +244,12 @@ function jcTimeAgo(ts) {
   function open(btn) {
     state.title = btn.dataset.title;
     state.pay = btn.dataset.pay;
-    state.type = btn.dataset.type;
     state.proof = btn.dataset.proof;
     state.photoName = "";
     state.videoName = "";
 
     $("wiz-bounty-name").textContent = state.title;
     $("wiz-reward-amount").textContent = state.pay;
-    $("wiz-type").textContent = state.type;
     $("wiz-proof-note").textContent = state.proof;
 
     // reset uploads + fields
