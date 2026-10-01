@@ -84,7 +84,7 @@
   if (!el) return;
   const items = [
     ['<span class="coin-sym">$JOBC</span> Launching on Robinhood — soon'],
-    ["Treasury balance: <span class='up'>$0</span> — fees route in from day one"],
+    ["Treasury balance: <span class='up js-treasury'>$0</span> — 2% of every trade"],
     ["Paid out to workers: $0 — the board is open"],
     ["Bounty board: <span class='up'>live</span> — claim before launch"],
     ["Bag worker payroll: opens at launch"],
@@ -490,12 +490,68 @@ function jcTimeAgo(ts) {
 })();
 
 /* ------------------------------------------------------------
+   7.55 LIVE TREASURY — creator fees earned on pons (Robinhood
+   Chain), shown in USD. Updates every element with .js-treasury.
+------------------------------------------------------------ */
+(function liveTreasury() {
+  const CA = "0x9710a317e27ddd7e9fa431840ca4d9f7105dd9d0";
+  const FEES_URL =
+    "https://www.ponsfamily.com/api/pons-v2-market/" + CA + "/creator-fees";
+
+  async function getFeesWei() {
+    // The pons API has no CORS headers, so route the read through a proxy.
+    const sources = [FEES_URL, "https://r.jina.ai/" + FEES_URL];
+    for (const url of sources) {
+      try {
+        const r = await fetch(url);
+        if (!r.ok) continue;
+        const text = await r.text();
+        const m = text.match(/"earnedForToken"\s*:\s*"?(\d+)"?/);
+        if (m) return Number(m[1]);
+      } catch (e) { /* try next source */ }
+    }
+    return null;
+  }
+
+  async function getEthUsd() {
+    try {
+      const r = await fetch(
+        "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
+      );
+      if (!r.ok) return null;
+      const j = await r.json();
+      return j.ethereum && j.ethereum.usd;
+    } catch (e) { return null; }
+  }
+
+  async function update() {
+    const wei = await getFeesWei();
+    if (wei == null) return; // keep whatever is shown
+    const eth = wei / 1e18;
+    const price = await getEthUsd();
+    let text;
+    if (price) {
+      const usd = eth * price;
+      text = "$" + usd.toLocaleString(undefined, {
+        maximumFractionDigits: usd >= 1000 ? 0 : 2,
+      });
+    } else {
+      text = eth.toFixed(4) + " ETH";
+    }
+    document.querySelectorAll(".js-treasury").forEach((el) => (el.textContent = text));
+  }
+
+  update();
+  setInterval(update, 120000);
+})();
+
+/* ------------------------------------------------------------
    7.6 CA PILL — click to copy the contract address
 ------------------------------------------------------------ */
 (function caPill() {
   document.querySelectorAll(".ca-pill").forEach((pill) => {
     pill.addEventListener("click", () => {
-      const ca = pill.querySelector("strong").textContent.trim();
+      const ca = pill.dataset.ca || pill.querySelector("strong").textContent.trim();
       navigator.clipboard.writeText(ca).then(() => {
         const toast = document.getElementById("toast");
         const toastText = document.getElementById("toast-text");
